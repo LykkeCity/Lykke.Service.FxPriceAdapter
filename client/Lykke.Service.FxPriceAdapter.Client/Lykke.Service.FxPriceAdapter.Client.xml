@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lykke.Service.FxPriceAdapter.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Lykke.Service.FxPriceAdapter.Client.AutofacExtension">
+            <summary>
+            Extension for client registration
+            </summary>
+        </member>
+        <member name="M:Lykke.Service.FxPriceAdapter.Client.AutofacExtension.RegisterFxPriceAdapterClient(Autofac.ContainerBuilder,Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterServiceClientSettings,System.Func{Lykke.HttpClientGenerator.HttpClientGeneratorBuilder,Lykke.HttpClientGenerator.HttpClientGeneratorBuilder})">
+            <summary>
+            Registers <see cref="T:Lykke.Service.FxPriceAdapter.Client.IFxPriceAdapterClient"/> in Autofac container using <see cref="T:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterServiceClientSettings"/>.
+            </summary>
+            <param name="builder">Autofac container builder.</param>
+            <param name="settings">FxPriceAdapter client settings.</param>
+            <param name="builderConfigure">Optional <see cref="T:Lykke.HttpClientGenerator.HttpClientGeneratorBuilder"/> configure handler.</param>
+        </member>
+        <member name="T:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterClient">
+            <summary>
+            FxPriceAdapter API aggregating interface.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterClient.Api">
+            <summary>Inerface to FxPriceAdapter Api.</summary>
+        </member>
+        <member name="M:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterClient.#ctor(Lykke.HttpClientGenerator.IHttpClientGenerator)">
+            <summary>C-tor</summary>
+        </member>
+        <member name="T:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterServiceClientSettings">
+            <summary>
+            FxPriceAdapter client settings.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.FxPriceAdapter.Client.FxPriceAdapterServiceClientSettings.ServiceUrl">
+            <summary>Service url.</summary>
+        </member>
+        <member name="T:Lykke.Service.FxPriceAdapter.Client.IFxPriceAdapterApi">
+            <summary>
+            FxPriceAdapter client API interface.
+            </summary>
+        </member>
+        <member name="T:Lykke.Service.FxPriceAdapter.Client.IFxPriceAdapterClient">
+            <summary>
+            FxPriceAdapter client interface.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.FxPriceAdapter.Client.IFxPriceAdapterClient.Api">
+            <summary>Application Api interface</summary>
+        </member>
+    </members>
+</doc>
