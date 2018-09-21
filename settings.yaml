@@ -13,7 +13,7 @@ FxPriceAdapterService:
       - RabbitMq 
  
     ExchangeName:
-        settings-key: RawTickPrice-FxPriceAdapter
+        settings-key: FxPriceAdapter-TickPrices-ExchangeName
 
   Period:
       settings-key: FxPriceAdapterService-Period
