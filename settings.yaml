@@ -1,29 +1,35 @@
 FxPriceAdapterService:
-    Db:
-        LogsConnString:
-            settings-key: LogsConnString
-            types:
-              - AzureTableStorage
-FxPriceAdapterJob:
   Db:
-    LogsConnString:
-      settings-key: LogsConnString
+    LogsConnectionString:
+      settings-key: FxPriceAdapterService-LogsConnectionString
       types:
-        - AzureTableStorage
+      - AzureTableStorage
+      - Logs 
+
   Rabbit:
     ConnectionString:
-      settings-key: ConnectionString
+      settings-key: RawPriceRabbit
       types:
-        - RabbitMq
-SlackNotifications:
-    AzureQueue:
-        ConnectionString:
-            settings-key: SlackNotificationsConnString
-            types:
-                - AzureTableStorage
-        QueueName:
-            settings-key: SlackQueueName
-MonitoringServiceClient:
-    MonitoringServiceUrl:
-        settings-key: MonitoringServiceUrl
+      - RabbitMq 
+ 
+    ExchangeName:
+        settings-key: RawTickPrice-FxPriceAdapter
 
+  Period:
+      settings-key: FxPriceAdapterService-Period
+
+  SourceUrl:
+      settings-key: FxPriceAdapterService-SourceUrl
+      
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types:
+      - AzureTableStorage
+    QueueName:
+      settings-key: SlackQueueName
+      
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
