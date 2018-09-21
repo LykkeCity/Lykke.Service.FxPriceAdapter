@@ -8,7 +8,7 @@ FxPriceAdapterService:
 
   Rabbit:
     ConnectionString:
-      settings-key: RawPriceRabbit
+      settings-key: RawPriceRabbitMq
       types:
       - RabbitMq 
  
