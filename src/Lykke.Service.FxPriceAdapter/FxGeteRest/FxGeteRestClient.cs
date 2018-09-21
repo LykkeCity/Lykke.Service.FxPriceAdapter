@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Lykke.Service.FxPriceAdapter.FxGeteRest
 {
-    public class FxGeteRestClient: IDisposable
+    public class FxGeteRestClient: IFxGeteRestClient, IDisposable
     {
         private readonly string _dataurl;
         private readonly HttpClient _client;

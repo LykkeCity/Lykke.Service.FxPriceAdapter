@@ -31,7 +31,7 @@ namespace Lykke.Service.FxPriceAdapter
                 options.Logs = logs =>
                 {
                     logs.AzureTableName = "FxPriceAdapterLog";
-                    logs.AzureTableConnectionStringResolver = settings => settings.FxPriceAdapterService.Db.LogsConnString;
+                    logs.AzureTableConnectionStringResolver = settings => settings.FxPriceAdapterService.Db.LogsConnectionString;
 
                     // TODO: You could add extended logging configuration here:
                     /* 

@@ -25,7 +25,7 @@ namespace Lykke.Service.FxPriceAdapter.Modules
                 .As<IStartable>()
                 .As<IStopable>()
                 .SingleInstance()
-                .WithParameter(TypedParameter.From(_settings.Rabbit.ConnectionString));
+                .WithParameter(TypedParameter.From(_settings.Period));
 
             builder.RegisterType<TickPricePublisher>()
                 .As<ITickPricePublisher>()

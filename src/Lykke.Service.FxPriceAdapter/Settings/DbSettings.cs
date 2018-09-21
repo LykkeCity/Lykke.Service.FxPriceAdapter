@@ -5,6 +5,6 @@ namespace Lykke.Service.FxPriceAdapter.Settings
     public class DbSettings
     {
         [AzureTableCheck]
-        public string LogsConnString { get; set; }
+        public string LogsConnectionString { get; set; }
     }
 }

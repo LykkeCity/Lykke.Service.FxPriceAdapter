@@ -21,7 +21,7 @@ namespace Lykke.Service.FxPriceAdapter.PeriodicalHandlers
 
         public const string ExchangeName = "fxprice";
 
-        public MyPeriodicalHandler(ILogFactory logFactory, TimeSpan interval, IFxGeteRestClient fxGeteRestClient, ITickPricePublisher pricePublisher)
+        public MyPeriodicalHandler(ILogFactory logFactory, IFxGeteRestClient fxGeteRestClient, ITickPricePublisher pricePublisher, TimeSpan interval)
         {
             _fxGeteRestClient = fxGeteRestClient;
             _pricePublisher = pricePublisher;

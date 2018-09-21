@@ -1,4 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Autofac;
+using Common;
 using Lykke.Common.Log;
 using Lykke.RabbitMqBroker.Publisher;
 using Lykke.RabbitMqBroker.Subscriber;
@@ -6,7 +8,7 @@ using Lykke.Service.FxPriceAdapter.Settings;
 
 namespace Lykke.Service.FxPriceAdapter.RabbitPublishers
 {
-    public class TickPricePublisher : ITickPricePublisher
+    public class TickPricePublisher : ITickPricePublisher,IStartable, IStopable
     {
         private readonly ILogFactory _logFactory;
         private readonly RabbitMqSettings _settting;
@@ -25,7 +27,7 @@ namespace Lykke.Service.FxPriceAdapter.RabbitPublishers
             // about RabbitMq subscriber configuration
 
             var settings = RabbitMqSubscriptionSettings
-                .ForPublisher(_settting.ConnectionString, "", _settting.ExchangeName);
+                .ForPublisher(_settting.ConnectionString, _settting.ExchangeName);
 
             _publisher = new RabbitMqPublisher<FxTickPrice>(_logFactory, settings)
                 .SetSerializer(new JsonMessageSerializer<FxTickPrice>())
